@@ -1,2 +1,2 @@
 # opinionspam
-based on https://open.weibo.com/wiki/
+based on https://open.weibo.com/wiki/Weibo-JS
