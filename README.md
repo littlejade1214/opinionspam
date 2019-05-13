@@ -6,9 +6,9 @@ var querystring = require('querystring'); <br/>
 var fs = require('fs'); <br/>
 
 var protohandler = module.exports = function() { <br/>
-	this._appkey = "";	<br/>
-	this._appsecret = "";	<br/>
-	this._accesstoken = "";	<br/>
+	    this._appkey = "";	<br/>
+	    this._appsecret = "";	<br/>
+	    this._accesstoken = "";	<br/>
 }	<br/>
 
 var x = "1077723287"; <br/>
