@@ -12,6 +12,27 @@ var protohandler = module.exports = function() {
 }
 
 protohandler.prototype = {
+
+    token: function(url, params, callback) {
+        var postData = querystring.stringify(params);
+        var postHeaders = {  
+            'Content-Type': 'application/x-www-form-urlencoded'  
+        }; 
+        this._request("POST", url, postHeaders, postData, null, fuction(error, data, response) {
+            if (error) {
+                console.log("error:" + error);
+                callback(error, data);
+            } else {
+                var results = querystring.parse(data);
+                // var results = JSON.parse(data);
+                this._accesstoken = results["access_token"];
+                callback({
+                    data: results
+                });
+            }
+        });
+    }
+
     post: function(url, params, callback) {  
         if (!this._accesstoken) return callback("authentication process failed.");  
         var postData = querystring.stringify(params);  
